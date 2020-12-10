@@ -1,5 +1,6 @@
 package com.twhydqa.automationdemo.spreedemo.config;
 
+import com.twhydqa.automationdemo.spreedemo.annotation.LazyConfiguration;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +12,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 
-@Configuration
+import java.lang.annotation.Documented;
+
+@LazyConfiguration
 @Profile("!remote")
 public class WebdriverConfig {
 

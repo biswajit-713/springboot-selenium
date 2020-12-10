@@ -5,11 +5,15 @@ import com.twhydqa.automationdemo.spreedemo.spree.page.basepage.BasePage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Lazy
 @Component
+@Scope("prototype")
 public class LandingPage extends BasePage {
 
+    @Lazy
     @Autowired
     private HeaderComponent header;
 

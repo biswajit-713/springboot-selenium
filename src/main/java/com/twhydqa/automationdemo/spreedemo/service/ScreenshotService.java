@@ -13,21 +13,26 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
-//@Service
+@Lazy
+@Service
 public class ScreenshotService {
 
-//    @Autowired
+    @Autowired
     private TakesScreenshot driver;
 
     @Value("${screenshot.path}")
     private Path path;
 
-//    public void captureScreenshot(final String imgName) throws IOException {
-//        File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
-//        FileCopyUtils.copy(sourceFile, this.path.resolve(imgName).toFile());
-//    }
+    public void captureScreenshot(final String imgName) {
+        File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
+        try {
+            FileCopyUtils.copy(sourceFile, this.path.resolve(imgName).toFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-//    @PostConstruct
-//    public void afterConstructorIsCalled() {
-//    }
+    @PostConstruct
+    public void afterConstructorIsCalled() {
+    }
 }

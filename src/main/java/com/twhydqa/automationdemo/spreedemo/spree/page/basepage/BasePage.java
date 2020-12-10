@@ -11,9 +11,11 @@ import javax.annotation.PostConstruct;
 
 public abstract class BasePage {
 
+    @Lazy
     @Autowired
     protected WebDriver driver;
 
+    @Lazy
     @Autowired
     protected WebDriverWait wait;
 

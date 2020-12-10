@@ -1,5 +1,6 @@
 package com.twhydqa.automationdemo.spreedemo.config;
 
+import com.twhydqa.automationdemo.spreedemo.annotation.LazyConfiguration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -13,7 +14,7 @@ import org.springframework.context.annotation.Profile;
 
 import java.net.URL;
 
-@Configuration
+@LazyConfiguration
 @Profile("remote")
 public class RemoteWebdriverConfig {
 

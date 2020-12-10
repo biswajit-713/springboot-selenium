@@ -5,11 +5,14 @@ import com.twhydqa.automationdemo.spreedemo.spree.page.basepage.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Lazy
 @Component
+@Scope("prototype")
 public class HeaderComponent extends BasePage {
 
     @FindBy(css = ".search-icons")
