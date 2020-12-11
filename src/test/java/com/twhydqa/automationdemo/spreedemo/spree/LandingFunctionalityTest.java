@@ -2,19 +2,17 @@ package com.twhydqa.automationdemo.spreedemo.spree;
 
 
 import com.twhydqa.automationdemo.spreedemo.service.ScreenshotService;
-import com.twhydqa.automationdemo.spreedemo.spree.page.LandingPage;
+import com.twhydqa.automationdemo.spreedemo.spree.page.SpreeLandingPage;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.test.context.junit4.SpringRunner;
 
 //@RunWith(SpringRunner.class)
-public class SpreeTest extends SpringBaseTest {
+public class LandingFunctionalityTest extends SpringBaseTest {
 
     @Lazy
     @Autowired
-    LandingPage landingPage;
+    SpreeLandingPage spreeLandingPage;
 
     @Lazy
     @Autowired
@@ -22,11 +20,10 @@ public class SpreeTest extends SpringBaseTest {
 
     @Test
     public void verifySearchFunctionality() {
-        landingPage.goTo();
-        landingPage.isAt();
+        spreeLandingPage.goTo();
+        spreeLandingPage.isAt();
         screenshotService.captureScreenshot("landingPage.png");
-        landingPage.closeBrowser();
-        assert 1==1;
+        spreeLandingPage.close();
     }
 
 }

@@ -1,6 +1,7 @@
 package com.twhydqa.automationdemo.spreedemo.config;
 
 import com.twhydqa.automationdemo.spreedemo.annotation.LazyConfiguration;
+import com.twhydqa.automationdemo.spreedemo.annotation.ThreadScopeBean;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -21,19 +22,19 @@ public class RemoteWebdriverConfig {
     @Value("${selenium.grid.url}")
     private URL url;
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver remoteFirefoxDriver() {
         return new RemoteWebDriver(url, DesiredCapabilities.firefox());
     }
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver remoteChromeDriver() {
         return new RemoteWebDriver(url, DesiredCapabilities.chrome());
     }
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnMissingBean
     public WebDriver remoteDefaultDriver() {
         return new RemoteWebDriver(url, DesiredCapabilities.chrome());

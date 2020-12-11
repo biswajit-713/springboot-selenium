@@ -26,7 +26,7 @@ public abstract class BasePage {
 
     public abstract boolean isAt();
 
-    public void closeBrowser() {
+    public void close() {
         driver.quit();
     }
 }
