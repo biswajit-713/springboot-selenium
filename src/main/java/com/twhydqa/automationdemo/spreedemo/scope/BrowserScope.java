@@ -1,4 +1,4 @@
-package com.twhydqa.automationdemo.spreedemo.config;
+package com.twhydqa.automationdemo.spreedemo.scope;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;

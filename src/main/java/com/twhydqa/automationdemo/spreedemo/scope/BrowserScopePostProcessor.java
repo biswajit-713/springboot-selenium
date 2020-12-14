@@ -1,4 +1,4 @@
-package com.twhydqa.automationdemo.spreedemo.config;
+package com.twhydqa.automationdemo.spreedemo.scope;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
